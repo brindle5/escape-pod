@@ -1,34 +1,113 @@
-print('Hello and welcome to the Terminal')
+import random
+# import time
 
-playing = input('To gain access to the escape pod, you must unlock it. Do you wish to continue? ')
+# attempt = 3
+# current_question = 0
 
-if playing.lower() != 'yes':
-    print('This pod will collapse in 5, 4, 3, 2 ,1')
-    quit()
+QUESTIONS = [
+    {
+        "question": "What is the third planet from the sun? ",
+        "answer": "Earth"},
+    {
+        "question": "What has hands but cannot clap? ",
+        "answer": "Clock"
+    },
+    {
+        "question": "What is 2 + 2? ",
+        "answer": "4"
+    },
+    {
+        "question": "what is 4 + 7? ",
+        "answer": "11"
+    }
+]
 
-else:
-    player = input('Please enter your name: ')
+# print('Hello and welcome to the Terminal')
+# print('To gain access to the escape pod, you must unlock it.')
 
-print(f'Hi {player} and welcome to the escape pod!')
-print('To enter this escape pod, you have three attempts.')
-print('After the third unsuccessful attempt, the pod will be collapsed.')
+# playing = input('Press enter to continue. \n')
 
-answer = input('What is the third planet from the sun? ')
+# while True:
+#     player = input('Please enter your name: \n')
 
-if answer == 'earth':
-    print('That is correct')
-else:
-    print('That is not correct')
-    print(f'You have only two attempts remaining, {player}')
+#     if not player.isalpha():
+#         print('That is an invalid response') 
+#         print('Only letters are accepted')
+#     else: 
+#         break
 
-print('Time for a riddle.')
-print(f'Do you like riddles, {player}?')
-print('I hope so.')
+# print(f'Hi {player} and welcome to the escape pod!')
+# print('To enter this escape pod, you have three attempts.')
+# print('After the third unsuccessful attempt, the pod will collapse.')
+      
+def get_question():
 
-answer = input('What has hands but cannot clap? ').lower()
+    """
+    Get a random question from the question list.    
+    Assign the correct answer to a variable.
+    Assign the user's answer to a variable.
+    """
 
-if answer.lower != 'a clock':
-    print('That is correct')
-else:
-    print('Sorry, that is not right.')
+    random_index = random.randint(0, 3)
+    random_question = QUESTIONS[random_index]
+
+    # global my_question
+    # global correct_answer
+    # global my_answer
+      
+    my_question = random_question['question']    
+    correct_answer = random_question['answer']        
+    
+    my_answer = input(my_question)
+    print(my_answer)
+    print(correct_answer)
+    
+    
+
+get_question()
+
+
+
+# def validate_answer(my_answer, correct_answer):
+#     """
+#     Compare the player's answer with the correct answer from the dictionary
+#     Provide feedback from the terminal
+#     """
+#     if my_answer != correct_answer:
+#         print('Correct')
+#         get_question()
+#     else:
+#         print('That is not correct')
+
+# get next question
+#     """
+#     Ask questions up to 10
+#     """
+#     global current_question
+#     my_question = current_question
+
+#     while True:    
+#         if current_question <= 10:            
+#             current_question +=1
+#             get_question()
+#         else:
+#             print('Finished')
+   
+# def explode():
+#     print("The pod will explode in 3...")
+#     time.sleep(1)
+#     print("2...")
+#     time.sleep(1)
+#     print("1..." )
+#     time.sleep(1)
+#     print("KABOOM")
+
+
+
+
+
+
+
+
+
 
