@@ -40,44 +40,49 @@ QUESTIONS = [
 # print('To enter this escape pod, you have three attempts.')
 # print('After the third unsuccessful attempt, the pod will collapse.')
       
-def get_question():
+# def get_question():
 
-    """
-    Get a random question from the question list.    
-    Assign the correct answer to a variable.
-    Assign the user's answer to a variable.
-    """
+    # """
+    # Get a random question from the question list.    
+    # Assign the correct answer to a variable.
+    # Assign the user's answer to a variable.
+    # """
 
-    random_index = random.randint(0, 3)
-    random_question = QUESTIONS[random_index]
+    # random_index = random.randint(0, 3)
+    # random_question = QUESTIONS[random_index]
 
     # global my_question
     # global correct_answer
     # global my_answer
       
-    my_question = random_question['question']    
-    correct_answer = random_question['answer']        
+    # my_question = random_question['question']    
+    # correct_answer = random_question['answer']        
     
-    my_answer = input(my_question)
-    print(my_answer)
-    print(correct_answer)
-    
-    
+    # my_answer = input(my_question)
+        
+random_index = random.randint(0, 3)
+random_question = QUESTIONS[random_index]     
+my_question = random_question['question']    
+correct_answer = random_question['answer']      
+my_answer = input(my_question)
 
-get_question()
+def validate_answer(my_answer, correct_answer):
+    """
+    Compare the player's answer with the correct answer from the dictionary
+    Provide feedback from the terminal
+    """
+    if my_answer == correct_answer:
+        print('Correct')
+        get_next_question()      
+        
+    else:
+        print('That is not correct')
 
 
+# get_question()
+validate_answer(my_answer, correct_answer)
 
-# def validate_answer(my_answer, correct_answer):
-#     """
-#     Compare the player's answer with the correct answer from the dictionary
-#     Provide feedback from the terminal
-#     """
-#     if my_answer != correct_answer:
-#         print('Correct')
-#         get_question()
-#     else:
-#         print('That is not correct')
+
 
 # get next question
 #     """
