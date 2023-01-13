@@ -66,37 +66,38 @@ my_question = random_question['question']
 correct_answer = random_question['answer']      
 my_answer = input(my_question)
 
-def validate_answer(my_answer, correct_answer):
+def validate_answer(my_answer, correct_answer, my_question):
     """
     Compare the player's answer with the correct answer from the dictionary
     Provide feedback from the terminal
     """
     if my_answer == correct_answer:
         print('Correct')
-        get_next_question()      
+        get_next_question(my_question)    
         
     else:
         print('That is not correct')
 
+my_question = current_question
+def get_next_question(current_question):  
 
-# get_question()
-validate_answer(my_answer, correct_answer)
+    print(current_question)
+
+    # """
+    # Ask questions up to 10
+    # """
+    # global current_question
+    # my_question = current_question
+
+    # while True:    
+    #     if current_question <= 10:            
+    #         current_question +=1
+    #         get_question()
+    #     else:
+    #         print('Finished')
 
 
-
-# get next question
-#     """
-#     Ask questions up to 10
-#     """
-#     global current_question
-#     my_question = current_question
-
-#     while True:    
-#         if current_question <= 10:            
-#             current_question +=1
-#             get_question()
-#         else:
-#             print('Finished')
+validate_answer(my_answer, correct_answer, my_question)
    
 # def explode():
 #     print("The pod will explode in 3...")
