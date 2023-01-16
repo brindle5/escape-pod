@@ -1,8 +1,4 @@
 import random
-# import time
-
-# attempt = 3
-# current_question = 0
 
 QUESTIONS = [
     {
@@ -39,32 +35,13 @@ QUESTIONS = [
 # print(f'Hi {player} and welcome to the escape pod!')
 # print('To enter this escape pod, you have three attempts.')
 # print('After the third unsuccessful attempt, the pod will collapse.')
-      
-# def get_question():
-
-    # """
-    # Get a random question from the question list.    
-    # Assign the correct answer to a variable.
-    # Assign the user's answer to a variable.
-    # """
-
-    # random_index = random.randint(0, 3)
-    # random_question = QUESTIONS[random_index]
-
-    # global my_question
-    # global correct_answer
-    # global my_answer
-      
-    # my_question = random_question['question']    
-    # correct_answer = random_question['answer']        
-    
-    # my_answer = input(my_question)
-        
+       
 random_index = random.randint(0, 3)
 random_question = QUESTIONS[random_index]     
 my_question = random_question['question']    
 correct_answer = random_question['answer']      
 my_answer = input(my_question)
+
 
 def validate_answer(my_answer, correct_answer, my_question):
     """
@@ -73,15 +50,42 @@ def validate_answer(my_answer, correct_answer, my_question):
     """
     if my_answer == correct_answer:
         print('Correct')
-        get_next_question(my_question)    
+        # get_next_question(my_question)    
         
     else:
-        print('That is not correct')
+        print('That is not correct.')
 
-my_question = current_question
-def get_next_question(current_question):  
 
-    print(current_question)
+
+        # attempt = 2
+        # attempts_countdown(attempt)
+             
+
+# def attempts_countdown(attempt):
+#     if attempt > 0:
+#         print(f'You have {attempt} chances remaining.')
+#         attempt -= 1
+#         validate_answer(my_answer, correct_answer, my_question)        
+#     else:        
+#         print('This pod will collapse')
+  
+
+    
+    
+
+       
+#         
+#         
+#         
+       
+
+
+# current_question = 0
+
+# my_question = current_question
+# def get_next_question(current_question):  
+
+#     print(current_question)
 
     # """
     # Ask questions up to 10
@@ -98,15 +102,9 @@ def get_next_question(current_question):
 
 
 validate_answer(my_answer, correct_answer, my_question)
+
    
-# def explode():
-#     print("The pod will explode in 3...")
-#     time.sleep(1)
-#     print("2...")
-#     time.sleep(1)
-#     print("1..." )
-#     time.sleep(1)
-#     print("KABOOM")
+
 
 
 
