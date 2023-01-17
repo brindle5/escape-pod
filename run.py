@@ -1,4 +1,5 @@
 import random
+import time
 
 QUESTIONS = [
     {
@@ -41,9 +42,9 @@ random_question = QUESTIONS[random_index]
 my_question = random_question['question']    
 correct_answer = random_question['answer']      
 my_answer = input(my_question)
+attempt = 2
 
-
-def validate_answer(my_answer, correct_answer, my_question):
+def validate_answer(my_answer, correct_answer, my_question, attempt):
     """
     Compare the player's answer with the correct answer from the dictionary
     Provide feedback from the terminal
@@ -54,31 +55,15 @@ def validate_answer(my_answer, correct_answer, my_question):
         
     else:
         print('That is not correct.')
-
-
-
-        # attempt = 2
-        # attempts_countdown(attempt)
-             
-
-# def attempts_countdown(attempt):
-#     if attempt > 0:
-#         print(f'You have {attempt} chances remaining.')
-#         attempt -= 1
-#         validate_answer(my_answer, correct_answer, my_question)        
-#     else:        
-#         print('This pod will collapse')
+        attempt -= 1
+        if attempt > 0:
+            print(f'You have {attempt} chance remaining.')            
+            input(my_question)
+            validate_answer(my_answer, correct_answer, my_question, attempt)         
+        else:        
+            print('This pod will collapse')
+            explode()
   
-
-    
-    
-
-       
-#         
-#         
-#         
-       
-
 
 # current_question = 0
 
@@ -101,7 +86,17 @@ def validate_answer(my_answer, correct_answer, my_question):
     #         print('Finished')
 
 
-validate_answer(my_answer, correct_answer, my_question)
+def explode():
+    print("The pod will explode in 3...")
+    time.sleep(1)
+    print("2...")
+    time.sleep(1)
+    print("1..." )
+    time.sleep(1)
+    print("KABOOM")
+
+
+validate_answer(my_answer, correct_answer, my_question, attempt)
 
    
 
