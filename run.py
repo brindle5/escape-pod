@@ -16,6 +16,14 @@ QUESTIONS = [
     {
         "question": "what is 4 + 7? ",
         "answer": "11"
+    },
+    {
+        "question": "who was the first man on the moon? ",
+        "answer": "Neil Armstrong"
+    },
+    {
+        "question": "who was the first president of the USA? ",
+        "answer": "George Washington"
     }
 ]
 
@@ -37,7 +45,7 @@ QUESTIONS = [
 # print('To enter this escape pod, you have three attempts.')
 # print('After the third unsuccessful attempt, the pod will collapse.')
        
-random_index = random.randint(0, 3)
+random_index = random.randint(0, 5)
 random_question = QUESTIONS[random_index]     
 my_question = random_question['question']    
 correct_answer = random_question['answer']      
@@ -57,12 +65,12 @@ def validate_answer(my_answer, correct_answer, my_question, attempt):
         print('That is not correct.')
         attempt -= 1
         if attempt > 0:
-            print(f'You have {attempt} chance remaining.')            
-            input(my_question)
+            print(f'You have {attempt} chance remaining.')          
+            my_answer = input(my_question)            
             validate_answer(my_answer, correct_answer, my_question, attempt)         
         else:        
-            print('This pod will collapse')
-            explode()
+            print('Detonation sequence triggered...')
+            # explode()
   
 
 # current_question = 0
