@@ -44,12 +44,29 @@ QUESTIONS = [
 # print(f'Hi {player} and welcome to the escape pod!')
 # print('To enter this escape pod, you have three attempts.')
 # print('After the third unsuccessful attempt, the pod will collapse.')
-       
-random_index = random.randint(0, 5)
-random_question = QUESTIONS[random_index]     
-my_question = random_question['question']    
-correct_answer = random_question['answer']      
-my_answer = input(my_question)
+
+def question_picker(QUESTIONS): 
+    global number
+    number = random.randint(0, 5)   
+    global used_numbers 
+    used_numbers = []        
+    while True:                             
+        if number not in used_numbers:
+            used_numbers.append(number)            
+            return QUESTIONS[number]            
+            ask_question(number)                       
+            if len(used_numbers) >= 6:
+                break 
+
+def ask_question(number):       
+    random_question = QUESTIONS[number]
+    global my_question
+    my_question = random_question['question']
+    global correct_answer     
+    correct_answer = random_question['answer']
+    global my_answer    
+    my_answer = input(my_question)
+   
 attempt = 2
 
 def validate_answer(my_answer, correct_answer, my_question, attempt):
@@ -58,9 +75,9 @@ def validate_answer(my_answer, correct_answer, my_question, attempt):
     Provide feedback from the terminal
     """
     if my_answer == correct_answer:
-        print('Correct')
-        # get_next_question(my_question)    
-        
+        print('Correct')              
+        question_picker(QUESTIONS) 
+          
     else:
         print('That is not correct.')
         attempt -= 1
@@ -70,49 +87,42 @@ def validate_answer(my_answer, correct_answer, my_question, attempt):
             validate_answer(my_answer, correct_answer, my_question, attempt)         
         else:        
             print('Detonation sequence triggered...')
-            # explode()
-  
-
-# current_question = 0
-
-# my_question = current_question
-# def get_next_question(current_question):  
-
-#     print(current_question)
-
-    # """
-    # Ask questions up to 10
-    # """
-    # global current_question
-    # my_question = current_question
-
-    # while True:    
-    #     if current_question <= 10:            
-    #         current_question +=1
-    #         get_question()
-    #     else:
-    #         print('Finished')
+            explode()  
 
 
-def explode():
-    print("The pod will explode in 3...")
-    time.sleep(1)
-    print("2...")
-    time.sleep(1)
-    print("1..." )
-    time.sleep(1)
-    print("KABOOM")
+# def explode():
+#     print("The pod will explode in 3...")
+#     time.sleep(1)
+#     print("2...")
+#     time.sleep(1)
+#     print("1..." )
+#     time.sleep(1)
+#     print("KABOOM")
 
-
+question_picker(QUESTIONS)
+ask_question(number)
 validate_answer(my_answer, correct_answer, my_question, attempt)
 
-   
 
-
-
-
-
-
+# if __name__ == "__main__":
+#     game_over = False
+#     attempts = 0
+#     while game_over == False:
+#         if attempts == 0:
+#             # Only generates a new question if the user has moved to the next - avoids generating new question when they get the answer wrong
+#             random_question = question_picker(QUESTIONS)
+#         answer = validate_answer(random_question)
+#         if attempts <= 2:
+#             if answer is False:
+#                 attempts += 1
+#             else:
+#                 attempts = 0  # Resets the attempts for the next question
+#         else:
+#             # Run out of attempts - show messaging for that
+#             game_over = True  # Loop will then break and the program will stop
+#         if len(QUESTIONS) >= 6:
+#             # User has answered all questions correctly - show messaging for that
+#             game_over = True
 
 
 
