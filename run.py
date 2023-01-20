@@ -4,10 +4,11 @@ import time
 QUESTIONS = [
     {
         "question": "What is the third planet from the sun? ",
-        "answer": "Earth"},
+        "answer": "Earth"
+    },
     {
         "question": "What has hands but cannot clap? ",
-        "answer": "Clock"
+        "answer": "A clock"
     },
     {
         "question": "What is 2 + 2? ",
@@ -24,7 +25,28 @@ QUESTIONS = [
     {
         "question": "who was the first president of the USA? ",
         "answer": "George Washington"
+    },
+    {
+        "question" : "what has a head and tail but no body? ",
+        "answer" : "A coin"
+    },
+    {
+        "question" : "what fills a room but takes up no space? ",
+        "answer" : "Light"
+    },
+    {
+        "question" : "How much is a baker's dozen? ",
+        "answer" : "13"
+    },
+    {
+        "question" : "How many wives did King Henry VIII have beheaded? ",
+        "answer" : "2"
+    },
+    {
+        "question" : "Which of Shakespeare's plays is known as the Scottish play? ",
+        "answer" : "Macbeth"
     }
+
 ]
 
 # print('Hello and welcome to the Terminal')
@@ -47,7 +69,7 @@ QUESTIONS = [
 
 def question_picker(QUESTIONS): 
     global number
-    number = random.randint(0, 5)   
+    number = random.randint(0, 10)   
     global used_numbers 
     used_numbers = []        
     while True:                             
@@ -55,7 +77,8 @@ def question_picker(QUESTIONS):
             used_numbers.append(number)            
             return QUESTIONS[number]            
             ask_question(number)                       
-            if len(used_numbers) >= 6:
+            if len(used_numbers) >= 10:
+                print('Access cleared: you may now enter the escape pod')
                 break 
 
 def ask_question(number):       
@@ -97,7 +120,7 @@ def validate_answer(my_answer, correct_answer, my_question, attempt):
 #     time.sleep(1)
 #     print("1..." )
 #     time.sleep(1)
-#     print("KABOOM")
+#     print("GAME OVER")
 
 question_picker(QUESTIONS)
 ask_question(number)
@@ -109,9 +132,9 @@ validate_answer(my_answer, correct_answer, my_question, attempt)
 #     attempts = 0
 #     while game_over == False:
 #         if attempts == 0:
-#             # Only generates a new question if the user has moved to the next - avoids generating new question when they get the answer wrong
+#             # Only generates a new question if the user has moved to the next -avoids generating new question when they get the answer wrong
 #             random_question = question_picker(QUESTIONS)
-#         answer = validate_answer(random_question)
+#         answer = validate_answer(random_question, my_answer, correct_answer, attempt)
 #         if attempts <= 2:
 #             if answer is False:
 #                 attempts += 1
