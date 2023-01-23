@@ -49,23 +49,23 @@ QUESTIONS = [
 
 ]
 
-# print('Hello and welcome to the Terminal')
-# print('To gain access to the escape pod, you must unlock it.')
+print('Hello and welcome to the Terminal')
+print('To gain access to the escape pod, you must unlock it.')
 
-# playing = input('Press enter to continue. \n')
+playing = input('Press enter to continue. \n')
 
-# while True:
-#     player = input('Please enter your name: \n')
+while True:
+    player = input('Please enter your name: \n')
 
-#     if not player.isalpha():
-#         print('That is an invalid response') 
-#         print('Only letters are accepted')
-#     else: 
-#         break
+    if not player.isalpha():
+        print('That is an invalid response') 
+        print('Only letters are accepted')
+    else: 
+        break
 
-# print(f'Hi {player} and welcome to the escape pod!')
-# print('To enter this escape pod, you have three attempts.')
-# print('After the third unsuccessful attempt, the pod will collapse.')
+print(f'Hi {player} and welcome to the escape pod!')
+print('To enter this escape pod, you have three attempts.')
+print('After the third unsuccessful attempt, the pod will collapse.')
 
 def question_picker(QUESTIONS): 
     global number
@@ -76,7 +76,8 @@ def question_picker(QUESTIONS):
         if number not in used_numbers:
             used_numbers.append(number)            
             return QUESTIONS[number]            
-            ask_question(number)                       
+            ask_question(number)
+            
             if len(used_numbers) >= 10:
                 print('Access cleared: you may now enter the escape pod')
                 break 
@@ -113,14 +114,14 @@ def validate_answer(my_answer, correct_answer, my_question, attempt):
             explode()  
 
 
-# def explode():
-#     print("The pod will explode in 3...")
-#     time.sleep(1)
-#     print("2...")
-#     time.sleep(1)
-#     print("1..." )
-#     time.sleep(1)
-#     print("GAME OVER")
+def explode():
+    print("The pod will explode in 3...")
+    time.sleep(1)
+    print("2...")
+    time.sleep(1)
+    print("1..." )
+    time.sleep(1)
+    print("GAME OVER")
 
 question_picker(QUESTIONS)
 ask_question(number)
