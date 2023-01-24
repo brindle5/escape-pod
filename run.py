@@ -75,40 +75,41 @@ def question_picker(QUESTIONS):
     while True:                             
         if number not in used_numbers:
             used_numbers.append(number)            
-            return QUESTIONS[number]            
-            ask_question(number)
-            
-            if len(used_numbers) >= 10:
-                print('Access cleared: you may now enter the escape pod')
-                break 
+            # return ask_question(number)  
+            return QUESTIONS[number]          
+        if len(used_numbers) >= 10:
+            print('Access cleared: you may now enter the escape pod')
+            break 
 
-def ask_question(number):       
-    random_question = QUESTIONS[number]
+def ask_question(question):       
+    # random_question = QUESTIONS[number]
     global my_question
-    my_question = random_question['question']
+    my_question = question['question']
     global correct_answer     
-    correct_answer = random_question['answer']
+    correct_answer = question['answer']
     global my_answer    
     my_answer = input(my_question)
+    return my_answer
    
 attempt = 2
 
-def validate_answer(my_answer, correct_answer, my_question, attempt):
+def validate_answer(question, my_answer, attempt):
     """
     Compare the player's answer with the correct answer from the dictionary
     Provide feedback from the terminal
     """
-    if my_answer == correct_answer:
+    if my_answer == question['answer']:
         print('Correct')              
-        question_picker(QUESTIONS) 
-          
+        # question_picker(QUESTIONS) 
+        return True
     else:
         print('That is not correct.')
         attempt -= 1
         if attempt > 0:
             print(f'You have {attempt} chance remaining.')          
-            my_answer = input(my_question)            
-            validate_answer(my_answer, correct_answer, my_question, attempt)         
+            # my_answer = input(my_question)            
+            # validate_answer(my_answer, correct_answer, my_question, attempt)
+            return False         
         else:        
             print('Detonation sequence triggered...')
             explode()  
@@ -123,30 +124,38 @@ def explode():
     time.sleep(1)
     print("GAME OVER")
 
-question_picker(QUESTIONS)
-ask_question(number)
-validate_answer(my_answer, correct_answer, my_question, attempt)
+# question_picker(QUESTIONS)
+# ask_question(number)
+# validate_answer(my_answer, correct_answer, my_question, attempt)
 
 
-# if __name__ == "__main__":
-#     game_over = False
-#     attempts = 0
-#     while game_over == False:
-#         if attempts == 0:
-#             # Only generates a new question if the user has moved to the next -avoids generating new question when they get the answer wrong
-#             random_question = question_picker(QUESTIONS)
-#         answer = validate_answer(random_question, my_answer, correct_answer, attempt)
-#         if attempts <= 2:
-#             if answer is False:
-#                 attempts += 1
-#             else:
-#                 attempts = 0  # Resets the attempts for the next question
-#         else:
-#             # Run out of attempts - show messaging for that
-#             game_over = True  # Loop will then break and the program will stop
-#         if len(QUESTIONS) >= 6:
-#             # User has answered all questions correctly - show messaging for that
-#             game_over = True
+if __name__ == "__main__":
+    game_active = True
+    attempts = 0
+    while game_active:
+
+        question_active = True
+        while question_active:
+
+            if attempts == 0:
+                # Only generates a new question if the user has moved to the next -avoids generating new question when they get the answer wrong
+                random_question = question_picker(QUESTIONS)
+            my_answer = ask_question(random_question)
+            answer = validate_answer(random_question, my_answer, attempt)
+            print(answer)
+            print(attempts)
+            if attempts <= 2:
+                if answer is False:
+                    attempts += 1
+                else:
+                    attempts = 0  # Resets the attempts for the next question
+                    question_active == False
+            else:
+                # Run out of attempts - show messaging for that
+                question_active = False  # Loop will then break and the program will stop
+            # if len(QUESTIONS) >= 6:
+            #     # User has answered all questions correctly - show messaging for that
+            #     game_active= False
 
 
 
