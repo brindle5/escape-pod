@@ -46,7 +46,6 @@ QUESTIONS = [
         "question" : "Which of Shakespeare's plays is known as the Scottish play? ",
         "answer" : "Macbeth"
     }
-
 ]
 
 # print('Hello and welcome to the Terminal')
@@ -67,101 +66,82 @@ QUESTIONS = [
 # print('To enter this escape pod, you have three attempts.')
 # print('After the third unsuccessful attempt, the pod will collapse.')
 
-    
-    # while True:                             
-    #     if number not in used_numbers:
-    #         used_numbers.append(number)            
-            
-    #         return QUESTIONS[number]          
-    #     if len(used_numbers) >= 10:
-    #         print('Access cleared: you may now enter the escape pod')
-    #         break 
-
-# def ask_question(question): 
-     
-#     global my_question
-#     my_question = question['question']
-#     global correct_answer     
-#     correct_answer = question['answer']
-#     global my_answer    
-#     my_answer = input(my_question)
-#     return my_answer
-   
 attempt = 2
 
-def validate_answer(question, my_answer, attempt):
+def validate_answer(question, my_answer, correct_answer, attempt):
     """
     Compare the player's answer with the correct answer from the dictionary
     Provide feedback from the terminal
     """
-    # if my_answer == question['answer']:
-    if my_answer == QUESTIONS[i]['answer']:
+    
+    if my_answer == correct_answer:
         print('Correct')            
         return True
     else:
         print('That is not correct.')
-        attempt -= 1
+        attempt -= 1        
         if attempt > 0:
-            print(f'You have {attempt} chance remaining.')          
-            my_answer = input(my_question)            
-            return False         
-        else:        
-            print('Detonation sequence triggered...')
+            print(f'You have {attempt} chance remaining.')
+            my_answer = input(question)      
+            validate_answer(question, my_answer, correct_answer, attempt)
+        else:                 
+            print('Detonation sequence triggered...')       
             explode()  
 
 
-# def explode():
-#     print("The pod will explode in 3...")
-#     time.sleep(1)
-#     print("2...")
-#     time.sleep(1)
-#     print("1..." )
-#     time.sleep(1)
-#     print("GAME OVER")
+def explode():
+    print("The pod will explode in 3...")
+    time.sleep(1)
+    print("2...")
+    time.sleep(1)
+    print("1..." )
+    time.sleep(1)
+    print("GAME OVER")    
 
+    # return False
 
+def main():    
 
-def main():
-
-    random.shuffle(QUESTIONS) 
-    for i in range(0, 9): 
-        question = QUESTIONS[i]['question']
-        # correct_answer = QUESTIONS[i]['answer']       
-        my_answer = input(question)
-
-
-
-
-
-if __name__ == "__main__":    
-    
     game_active = True
-    attempts = 0
+    chances = 0
    
     while game_active:        
 
-        question_active = True
-        while question_active:
+        question_active = True        
 
-            
-            
+        while question_active:  
 
-            # if attempts == 0:
-            #     # Only generates a new question if the user has moved to the next -avoids generating new question when they get the answer wrong
-            #     random_question = question_picker(QUESTIONS)
-            # my_answer = ask_question(random_question)
-            # answer = validate_answer(random_question, my_answer, attempt)
-            # print(answer)
-            # print(attempts)
-            # if attempts <= 2:
-            #     if answer is False:
-            #         attempts += 1
-            #     else:
-            #         attempts = 0  # Resets the attempts for the next question
-            #         question_active == False
-            # else:
-            #     # Run out of attempts - show messaging for that
-            #     question_active = False  # Loop will then break and the program will stop
-            # if len(QUESTIONS) >= 6:
-            #     # User has answered all questions correctly - show messaging for that
-            #     game_active= False
+            random.shuffle(QUESTIONS) 
+            for i in range(0, 12): 
+                question = QUESTIONS[i]['question'] 
+                correct_answer = QUESTIONS[i]['answer']                     
+                my_answer = input(question)
+                validate_answer(question, my_answer, correct_answer, attempt)
+                
+                question_active = False
+                
+
+                
+                # if chances == 0:
+                #     validate_answer(question, my_answer, attempt)
+                #     """
+                #     Only generates a new question if the user has moved to the next -
+                #     avoids generating new question when they get the answer wrong
+                #     """
+                #     answer = validate_answer(question, my_answer, correct_answer, attempt)
+            
+                #     if chances <= 2:
+                #         if answer is False:
+                        # chances += 1                        
+
+                # else:
+            #     chances = 0  # Resets the attempts for the next question
+            #     question_active == False
+                    # else:
+        #     # Run out of attempts - show messaging for that
+        #           question_active = False  # Loop will then break and the program will stop
+        #       if len(QUESTIONS) >= 10:
+        #     # User has answered all questions correctly - show messaging for that
+        #     game_active= False
+
+main()
