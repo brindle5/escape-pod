@@ -72,8 +72,7 @@ def validate_answer(question, my_answer, correct_answer, attempt):
     """
     Compare the player's answer with the correct answer from the dictionary
     Provide feedback from the terminal
-    """
-    
+    """    
     if my_answer == correct_answer:
         print('Correct')            
         return True
@@ -83,46 +82,52 @@ def validate_answer(question, my_answer, correct_answer, attempt):
         if attempt > 0:
             print(f'You have {attempt} chance remaining.')
             my_answer = input(question)      
-            validate_answer(question, my_answer, correct_answer, attempt)
-        else:                 
+            validate_answer(question, my_answer, correct_answer, attempt)        
+        else:                                      
             print('Detonation sequence triggered...')       
-            explode()  
+            explode()
 
-
-def explode():
+def explode():    
     print("The pod will explode in 3...")
     time.sleep(1)
     print("2...")
     time.sleep(1)
     print("1..." )
     time.sleep(1)
-    print("GAME OVER")    
-
-    # return False
-
-def main():    
+    print("GAME OVER")
+    return False
+    
+def main():
 
     game_active = True
-    chances = 0
+    # chances = 0
    
     while game_active:        
 
-        question_active = True        
+        # question_active = True        
 
-        while question_active:  
+        # while question_active:  
 
-            random.shuffle(QUESTIONS) 
-            for i in range(0, 12): 
-                question = QUESTIONS[i]['question'] 
-                correct_answer = QUESTIONS[i]['answer']                     
-                my_answer = input(question)
-                validate_answer(question, my_answer, correct_answer, attempt)
-                
-                question_active = False
-                
+        random.shuffle(QUESTIONS) 
 
-                
-                # if chances == 0:
+        for i in range(0, 11):                       
+            question = QUESTIONS[i]['question'] 
+            correct_answer = QUESTIONS[i]['answer']                     
+            my_answer = input(question)             
+            validate_answer(question, my_answer, correct_answer, attempt)
+            # if True:
+            #     continue
+            # else:
+            #     break                    
+           
+        else:
+            print('You have proven your humanity.')
+            print('You may now access the escape pod.')
+            game_active = False        
+            
+main()
+
+ # if chances == 0:
                 #     validate_answer(question, my_answer, attempt)
                 #     """
                 #     Only generates a new question if the user has moved to the next -
@@ -143,5 +148,3 @@ def main():
         #       if len(QUESTIONS) >= 10:
         #     # User has answered all questions correctly - show messaging for that
         #     game_active= False
-
-main()
