@@ -3,48 +3,44 @@ import time
 
 QUESTIONS = [
     {
-        "question": "What is the third planet from the sun? ",
+        "question": "What is the third planet from the Sun? \n",
         "answer": "Earth"
     },
     {
-        "question": "What has hands but cannot clap? ",
+        "question": "What has hands but cannot clap? \n",
         "answer": "A clock"
     },
     {
-        "question": "What is 2 + 2? ",
-        "answer": "4"
+        "question": "Where is the Sea of Tranquility? \n",
+        "answer": "The Moon"
     },
     {
-        "question": "what is 4 + 7? ",
-        "answer": "11"
+        "question": "What has a neck but no head? \n",
+        "answer": "A bottle"
     },
     {
-        "question": "who was the first man on the moon? ",
-        "answer": "Neil Armstrong"
-    },
-    {
-        "question": "who was the first president of the USA? ",
-        "answer": "George Washington"
-    },
-    {
-        "question" : "what has a head and tail but no body? ",
+        "question" : "what has a head and tail but no body? \n",
         "answer" : "A coin"
     },
     {
-        "question" : "what fills a room but takes up no space? ",
+        "question" : "what fills a room but takes up no space? \n",
         "answer" : "Light"
     },
     {
-        "question" : "How much is a baker's dozen? ",
+        "question" : "How much is a baker's dozen? \n",
         "answer" : "13"
     },
     {
-        "question" : "How many wives did King Henry VIII have beheaded? ",
+        "question" : "How many wives did King Henry VIII have beheaded? \n",
         "answer" : "2"
     },
     {
-        "question" : "Which of Shakespeare's plays is known as the Scottish play? ",
+        "question" : "Which of Shakespeare's plays is known as the Scottish play? \n",
         "answer" : "Macbeth"
+    },
+    {
+        "question" : "Whoever makes it, has no need of it. Whoever buys it, has no use for it. Whoever uses it, can neither feel nor see it. What is it? \n",
+         "answer" : "A coffin"
     }
 ]
 
@@ -110,7 +106,7 @@ def main():
 
         random.shuffle(QUESTIONS) 
 
-        for i in range(0, 11):                       
+        for i in range(0, 9):                       
             question = QUESTIONS[i]['question'] 
             correct_answer = QUESTIONS[i]['answer']                     
             my_answer = input(question)             
