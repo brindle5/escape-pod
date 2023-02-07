@@ -19,6 +19,10 @@ I have used a variety of different tools to create the program:
 
 ### Flow chart ###
 
+A flow chart was created in order to organise the programme's logic using [Draw.io](https://www.draw.io).
+
+[Flowchart](documentation/flowchart.png)
+
 ### Functions ###
 
 The primary functions used on this application are:
@@ -40,9 +44,9 @@ I've used the following Python packages and/or external imported packages:
 
 ### Defensive Programming ###
 
-
 When the user is prompted to enter their name, the ‘isalpha ‘command is used to ensure only valid letters are accepted. If the user enters invalid characters, they will be prompted to enter their name again. 
 
+### Bugs ###
 
 ## **Deployment** ##
 
