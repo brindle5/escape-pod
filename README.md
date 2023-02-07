@@ -26,14 +26,23 @@ o	‘validate_answer’ - checks the user’s answer against the correct answer 
 o	‘explode‘ –  this ends the game if the user enters to incorrect answers
 o	`main()` - run all program functions.
 
-
 ### Imports ###
 
 I've used the following Python packages and/or external imported packages:
 - `time`: used for adding time delays.
 - `random`: used to get a random choice from a list.
 
-## **Testing**##
+## **Testing** ##
+
+### Code Validation ###
+
+### Lighthouse Audit ###
+
+### Defensive Programming ###
+
+
+When the user is prompted to enter their name, the ‘isalpha ‘command is used to ensure only valid letters are accepted. If the user enters invalid characters, they will be prompted to enter their name again. 
+
 
 ## **Deployment** ##
 
@@ -49,19 +58,6 @@ Deployment steps are as follows, after account setup:
 - If using any confidential credentials, such as CREDS.JSON, then these should be pasted in the Config Variables as well.
 - Further down, to support dependencies, select **Add Buildpack**.
 - The order of the buildpacks is important, select `Python` first, then `Node.js` second. (if they are not in this order, you can drag them to rearrange them)
-
-Heroku needs two additional files in order to deploy properly.
-- requirements.txt
-- Procfile
-
-You can install this project's **requirements** (where applicable) using:
-- `pip3 install -r requirements.txt`
-
-If you have your own packages that have been installed, then the requirements file needs updated using:
-- `pip3 freeze --local > requirements.txt`
-
-The **Procfile** can be created with the following command:
-- `echo web: node index.js > Procfile`
 For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
 Either:
 - Select **Automatic Deployment** from the Heroku app.

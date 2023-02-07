@@ -44,23 +44,30 @@ QUESTIONS = [
     }
 ]
 
-# print('Hello and welcome to the Terminal')
-# print('To gain access to the escape pod, you must unlock it.')
+print('Welcome to the USS Odyssey')
+print()
+print('To gain access to the escape pod, you must unlock it.')
+print()
 
-# playing = input('Press enter to continue. \n')
+playing = input('Press any key to continue. \n')
 
-# while True:
-#     player = input('Please enter your name: \n')
+while True:
+    player = input('Please enter your name: \n')
 
-#     if not player.isalpha():
-#         print('That is an invalid response') 
-#         print('Only letters are accepted')
-#     else: 
-#         break
+    if not player.isalpha():
+        print('That is an invalid response') 
+        print('Only letters are accepted')
+    else: 
+        break
 
-# print(f'Hi {player} and welcome to the escape pod!')
-# print('To enter this escape pod, you have three attempts.')
-# print('After the third unsuccessful attempt, the pod will collapse.')
+print(f'Hi {player} and welcome to the escape pod!')
+print()
+print('To enter this escape pod, you must answer ten questions.')
+print()
+print('The pod will explode if you enter two incorrect answers.')
+print()
+print('Good luck')
+print()
 
 attempt = 2
 
