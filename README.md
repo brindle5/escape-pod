@@ -4,7 +4,7 @@
 
 ## **Features** ##
 
-## ** Tools and Technologies** ##
+## **Tools and Technologies** ##
 
 I have used a variety of different tools to create the program:
 - [Python](https://www.python.org) has been used as the back-end programming language.
@@ -15,22 +15,27 @@ I have used a variety of different tools to create the program:
 - [Heroku](https://www.heroku.com) has been used for hosting the deployed back-end site.
 
 
-## ** Data Model ** ##
+## **Data Model** ##
 
 ### Flow chart ###
 
 ### Functions ###
 
+The primary functions used on this application are:
+o	‘validate_answer’ - checks the user’s answer against the correct answer in the dictionary. If incorrect, it prompts for the user to resubmit.
+o	‘explode‘ –  this ends the game if the user enters to incorrect answers
+o	`main()` - run all program functions.
+
+
 ### Imports ###
 
-I've used the following Python packages and/or external imported packages.
-- `time`: used for adding time delays
-- `random`: used to get a random choice from a list
+I've used the following Python packages and/or external imported packages:
+- `time`: used for adding time delays.
+- `random`: used to get a random choice from a list.
 
+## **Testing**##
 
-## ** Testing** ##
-
-## ** Deployment ** ##
+## **Deployment** ##
 
 Code Institute has provided a [template](https://github.com/Code-Institute-Org/python-essentials-template) to display the terminal view of this backend application in a modern web browser.
 This is to improve the accessibility of the project to others.
@@ -93,7 +98,7 @@ You can fork this repository by using the following steps:
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
 
-## ** Credits** ##
+## **Credits** ##
 
 ### Content ###
 
