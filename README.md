@@ -4,6 +4,10 @@
 
 ## **Features** ##
 
+### Future Features ###
+
+In the future, more questions could be added to the dictionary so as to enable the game to be replayable. The shuffle feature could be used to get only 10 questions so that the user experience would be different every time.
+
 ## **Tools and Technologies** ##
 
 I have used a variety of different tools to create the program:
@@ -19,9 +23,9 @@ I have used a variety of different tools to create the program:
 
 ### Flow chart ###
 
-A flow chart was created in order to organise the programme's logic using [Draw.io](https://www.draw.io).
+A flow chart was created in order to organise the programme's logic using [Draw.io](https://www.draw.io). This shows the entire cycle of the programme.
 
-[Flowchart](documentation/flowchart.png)
+![Flowchart](documentation/flowchart.png)
 
 ### Functions ###
 
