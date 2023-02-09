@@ -19,29 +19,49 @@ QUESTIONS = [
         "answer": "A bottle"
     },
     {
-        "question" : "what has a head and tail but no body? \n",
-        "answer" : "A coin"
+        "question": "what has a head and tail but no body? \n",
+        "answer": "A coin"
     },
     {
-        "question" : "what fills a room but takes up no space? \n",
-        "answer" : "Light"
+        "question": "what fills a room but takes up no space? \n",
+        "answer": "Light"
     },
     {
-        "question" : "How much is a baker's dozen? \n",
-        "answer" : "13"
+        "question": "How much is a baker's dozen? \n",
+        "answer": "13"
     },
     {
-        "question" : "How many wives did King Henry VIII have beheaded? \n",
-        "answer" : "2"
+        "question": "How many wives did King Henry VIII have beheaded? \n",
+        "answer": "2"
     },
     {
-        "question" : "Which of Shakespeare's plays is known as the Scottish play? \n",
-        "answer" : "Macbeth"
+        "question": "Which of Shakespeare's plays is known as the Scottish play? \n",  # noqa
+        "answer": "Macbeth"
     },
     {
-        "question" : "Whoever makes it, has no need of it. Whoever buys it, has no use for it. Whoever uses it, can neither feel nor see it. What is it? \n",
-         "answer" : "A coffin"
-    }
+        "question": "Whoever makes it, has no need of it. Whoever buys it, has no use for it. Whoever uses it, can neither feel nor see it. What is it? \n",  # noqa
+        "answer": "A coffin"
+    },
+    {
+        "question": "11 \n",
+        "answer": "11"
+    },
+     {
+        "question": "12? \n",
+        "answer": "12"
+    },
+    {
+        "question": "13 \n",
+        "answer": "13"
+    },
+    {
+        "question": "14 \n",
+        "answer": "14"
+    },
+    {
+        "question": "15 \n",
+        "answer": "15"
+    },
 ]
 
 print('Welcome to the USS Odyssey')
@@ -55,9 +75,9 @@ while True:
     player = input('Please enter your name: \n')
 
     if not player.isalpha():
-        print('That is an invalid response') 
+        print('That is an invalid response')
         print('Only letters are accepted')
-    else: 
+    else:
         break
 
 print(f'Hi {player} and welcome to the escape pod!')
@@ -71,83 +91,65 @@ print()
 
 attempt = 2
 
+
 def validate_answer(question, my_answer, correct_answer, attempt):
     """
     Compare the player's answer with the correct answer from the dictionary
     Provide feedback from the terminal
-    """    
+    """
     if my_answer == correct_answer:
-        print('Correct')            
+        print('Correct')
         return True
     else:
         print('That is not correct.')
-        attempt -= 1        
+        attempt -= 1
         if attempt > 0:
             print(f'You have {attempt} chance remaining.')
-            my_answer = input(question)      
-            validate_answer(question, my_answer, correct_answer, attempt)        
-        else:                                      
-            print('Detonation sequence triggered...')       
+            my_answer = input(question)
+            validate_answer(question, my_answer, correct_answer, attempt)
+        else:
+            print('Detonation sequence triggered...')
             explode()
 
-def explode():    
+
+def explode():
+    """
+    """
     print("The pod will explode in 3...")
     time.sleep(1)
     print("2...")
     time.sleep(1)
-    print("1..." )
+    print("1...")
     time.sleep(1)
     print("GAME OVER")
     return False
-    
+
+
 def main():
+    """
+    """
 
     game_active = True
-    # chances = 0
-   
-    while game_active:        
+    while game_active:
 
-        # question_active = True        
+        random.shuffle(QUESTIONS)
+        questions = QUESTIONS[:10]
 
-        # while question_active:  
-
-        random.shuffle(QUESTIONS) 
-
-        for i in range(0, 9):                       
-            question = QUESTIONS[i]['question'] 
-            correct_answer = QUESTIONS[i]['answer']                     
-            my_answer = input(question)             
-            validate_answer(question, my_answer, correct_answer, attempt)
-            # if True:
-            #     continue
-            # else:
-            #     break                    
-           
+        for i in range(0, 10):
+            question = questions[i]['question']
+            correct_answer = questions[i]['answer']
+            my_answer = input(f"Question #{i+1}: {question}")
+            is_correct = validate_answer(
+                question, my_answer, correct_answer, attempt)
+            if is_correct:
+                continue
+            else:
+                game_active = False
+                break
         else:
             print('You have proven your humanity.')
             print('You may now access the escape pod.')
-            game_active = False        
-            
+            game_active = False
+
+
 main()
-
- # if chances == 0:
-                #     validate_answer(question, my_answer, attempt)
-                #     """
-                #     Only generates a new question if the user has moved to the next -
-                #     avoids generating new question when they get the answer wrong
-                #     """
-                #     answer = validate_answer(question, my_answer, correct_answer, attempt)
-            
-                #     if chances <= 2:
-                #         if answer is False:
-                        # chances += 1                        
-
-                # else:
-            #     chances = 0  # Resets the attempts for the next question
-            #     question_active == False
-                    # else:
-        #     # Run out of attempts - show messaging for that
-        #           question_active = False  # Loop will then break and the program will stop
-        #       if len(QUESTIONS) >= 10:
-        #     # User has answered all questions correctly - show messaging for that
-        #     game_active= False
