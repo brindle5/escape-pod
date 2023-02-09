@@ -1,5 +1,16 @@
+import os
 import random
 import time
+
+import os
+
+
+def clear():
+    """
+    Clear function to clean-up the terminal so things don't get messy.
+    """
+    os.system("cls" if os.name == "nt" else "clear")
+
 
 QUESTIONS = [
     {
@@ -69,7 +80,7 @@ print()
 print('To gain access to the escape pod, you must unlock it.')
 print()
 
-playing = input('Press any key to continue. \n')
+playing = input('Press enter to continue. \n')
 
 while True:
     player = input('Please enter your name: \n')
@@ -97,6 +108,7 @@ def validate_answer(question, my_answer, correct_answer, attempt):
     Compare the player's answer with the correct answer from the dictionary
     Provide feedback from the terminal
     """
+    clear()
     if my_answer == correct_answer:
         print('Correct')
         return True
@@ -114,6 +126,8 @@ def validate_answer(question, my_answer, correct_answer, attempt):
 
 def explode():
     """
+    The second incorrect answer will trigger a
+    detonation sequence which ends the game.
     """
     print("The pod will explode in 3...")
     time.sleep(1)
@@ -127,8 +141,12 @@ def explode():
 
 def main():
     """
+    Shuffles the dictionary of questions and asks for user input.
+    Sends the user's answere to the validate function.
+    Keeps the player in a loop until they have answered 10 correct questions.
+    Asks if they want to play again at the game's conclusion.
     """
-
+    clear()
     game_active = True
     while game_active:
 
@@ -147,9 +165,16 @@ def main():
                 game_active = False
                 break
         else:
+            clear()
             print('You have proven your humanity.')
             print('You may now access the escape pod.')
             game_active = False
+
+    play_again = input("Would you like to play again? [yes/no]\n").lower()
+    if play_again == "no":
+        print("\nThanks for playing")
+    elif play_again == "yes":
+        main()
 
 
 main()

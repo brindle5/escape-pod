@@ -4,9 +4,10 @@
 
 ## **Features** ##
 
-### Future Features ###
+There are a number of features within the escape pod game:
 
-In the future, more questions could be added to the dictionary so as to enable the game to be replayable. The shuffle feature could be used to get only 10 questions so that the user experience would be different every time.
+- 
+
 
 ## **Tools and Technologies** ##
 
@@ -30,8 +31,8 @@ A flow chart was created in order to organise the programme's logic using [Draw.
 ### Functions ###
 
 The primary functions used on this application are:
-o	‘validate_answer’ - checks the user’s answer against the correct answer in the dictionary. If incorrect, it prompts for the user to resubmit.
-o	‘explode‘ –  this ends the game if the user enters to incorrect answers
+o	‘validate_answer()’ - checks the user’s answer against the correct answer in the dictionary. If incorrect, it prompts for the user to resubmit.
+o	‘explode()' –  this ends the game if the user enters to incorrect answers
 o	`main()` - run all program functions.
 
 ### Imports ###
