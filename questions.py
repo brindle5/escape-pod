@@ -1,7 +1,7 @@
 QUESTIONS = [
     {
-        "question": "What is the third planet from the Sun? \n",
-        "answer": "Earth"
+        "question": "What is the hottest planet in the solar system? \n",
+        "answer": "Venus"
     },
     {
         "question": "What has hands but cannot clap? \n",
@@ -40,23 +40,83 @@ QUESTIONS = [
         "answer": "A coffin"
     },
     {
-        "question": "11 \n",
-        "answer": "11"
+        "question": "In which US state is the city of Nashville? \n",
+        "answer": "Tennessee"
     },
      {
-        "question": "12? \n",
-        "answer": "12"
+        "question": "In what year did Tony Blair become British Prime Minister? \n",  # noqa
+        "answer": "1997"
     },
     {
-        "question": "13 \n",
-        "answer": "13"
+        "question": "Which British City is street artist Banksy closely associated with? \n",  # noqa
+        "answer": "Bristol"
     },
     {
-        "question": "14 \n",
-        "answer": "14"
+        "question": "Which language has the most native speakers? \n",
+        "answer": "Spanish"
     },
     {
-        "question": "15 \n",
-        "answer": "15"
+        "question": "Who was the last Tsar of Russia? \n",
+        "answer": "Nicholas II"
+    },
+    {
+        "question": "What is the main ingredient in guacamole? \n",
+        "answer": "Avocado"
+    },
+    {
+        "question": "Which planet has the most moons? \n",
+        "answer": "Saturn"
+    },
+    {
+        "question": "How many wisdom teeth does the average adult have? \n",
+        "answer": "4"
+    },
+    {
+        "question": "How many lives is a cast said to have? \n",
+        "answer": "9"
+    },
+    {
+        "question": "What is the largest bone in the human body? \n",
+        "answer": "Femur"
+    },
+    {
+        "question": "Which nuts are used to make marzipan? \n",
+        "answer": "Almonds"
+    },
+    {
+        "question": "What type of pastry are profiteroles made out of? \n",
+        "answer": "Choux"
+    },
+    {
+        "question": "Which musician won the Nobel Prize for literature in 2016? \n",  # noqa
+        "answer": "Bob Dylan"
+    },
+    {
+        "question": "Björn Again is a tribute band for which world-famous pop group? \n",  # noqa
+        "answer": "ABBA"
+    },
+    {
+        "question": "What spirit is mixed with ginger beer in a Moscow mule? \n",  # noqa
+        "answer": "Vodka"
+    },
+    {
+        "question": "How many humps does a Bactrian camel have? \n",
+        "answer": "2"
+    },
+    {
+        "question": "What is a female deer known as? \n",
+        "answer": "A doe"
+    },
+    {
+        "question": "Who was the music producer commonly referred to as The Fifth Beatle? \n",  # noqa
+        "answer": "George Martin"
+    },
+    {
+        "question": "In which UK city was Cadbury founded? \n",
+        "answer": "Birmingham"
+    },
+    {
+        "question": "Who originally recorded the classic ballad I Will Always Love You in 1973? \n",  # noqa
+        "answer": "Dolly Parton"
     },
 ]

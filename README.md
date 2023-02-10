@@ -31,19 +31,26 @@ A flow chart was created in order to organise the programme's logic using [Draw.
 ### Functions ###
 
 The primary functions used on this application are:
-o	‘validate_answer()’ - checks the user’s answer against the correct answer in the dictionary. If incorrect, it prompts for the user to resubmit.
-o	‘explode()' –  this ends the game if the user enters to incorrect answers
-o	`main()` - run all program functions.
+-   `clear()` - clears the screen after the introduction and each question.
+-	`validate_answer()` - checks the user’s answer against the correct answer in the dictionary. If incorrect, it prompts for the user to resubmit.
+-	`explode()` –  this ends the game if the user enters to incorrect answers.
+-	`main()` - run all program functions.
 
 ### Imports ###
 
 I've used the following Python packages and/or external imported packages:
 - `time`: used for adding time delays.
 - `random`: used to get a random choice from a list.
+- `os`:
+- `QUESTIONS`: imports the questions and answers from their separate file. 
 
 ## **Testing** ##
 
 ### Code Validation ###
+
+I have used the recommended [CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
+
+
 
 ### Lighthouse Audit ###
 

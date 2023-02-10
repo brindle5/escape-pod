@@ -10,6 +10,7 @@ def clear():
     """
     os.system("cls" if os.name == "nt" else "clear")
 
+
 print('Welcome to the USS Odyssey')
 print()
 print('To gain access to the escape pod, you must unlock it.')
@@ -28,9 +29,9 @@ while True:
 
 print(f'Hi {player} and welcome to the escape pod!')
 print()
-print('To enter this escape pod, you must answer ten questions.')
+print('To access the escape pod, you must answer ten questions.')
 print()
-print('The pod will explode if you enter two incorrect answers.')
+print('The ship will explode if you enter two incorrect answers.')
 print()
 print('Good luck')
 print()
@@ -77,8 +78,8 @@ def explode():
 def main():
     """
     Shuffles the dictionary of questions and asks for user input.
-    Sends the user's answere to the validate function.
-    Keeps the player in a loop until they have answered 10 correct questions.
+    Sends the user's answer to the validate answer function.
+    Keeps the player in a loop until they have answered 10 questions correctly.
     Asks if they want to play again at the game's conclusion.
     """
     clear()
