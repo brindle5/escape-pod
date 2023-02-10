@@ -49,7 +49,9 @@ I've used the following Python packages and/or external imported packages:
 
 ### Defensive Programming ###
 
-When the user is prompted to enter their name, the ‘isalpha ‘command is used to ensure only valid letters are accepted. If the user enters invalid characters, they will be prompted to enter their name again. 
+When the user is prompted to enter their name, the ‘isalpha ‘command is used to ensure only valid letters are accepted. If the user enters invalid characters, they will be prompted to enter their name again. The user cannot exit the loop without inputting valid characters.
+
+![Name input screenshot](documentation/name_input.png)
 
 ### Bugs ###
 
