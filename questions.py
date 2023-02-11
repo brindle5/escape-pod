@@ -119,4 +119,24 @@ QUESTIONS = [
         "question": "Who originally recorded the classic ballad I Will Always Love You in 1973? \n",  # noqa
         "answer": "Dolly Parton"
     },
+    {
+        "question": "Constantinople and Byzantium are former names of which major city? \n",  # noqa
+        "answer": "Istanbul"
+    },
+    {
+        "question": "Which country has the most castles? \n",
+        "answer": "Germany"
+    },
+    {
+        "question": "What is the main ingredient of black pudding?? \n",
+        "answer": "Blood"
+    },
+    {
+        "question": "What year did the Chernobyl disaster occur? \n",
+        "answer": "1986"
+    },
+    {
+        "question": "Which British King suffered from a stammer, as portrayed by Colin Firth in The King's Speech? \n",  # noqa
+        "answer": "George VI"
+    },
 ]
