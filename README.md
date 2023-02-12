@@ -6,7 +6,15 @@
 
 There are a number of features within the escape pod game:
 
-- 
+- The dictionary of 30 questions and answers are shuffled and the first 10 of those are presented to the player. 
+- The player is kept in a loop while they answer their 10 questions.
+- The player's answer is checked within the 'validate answer' function. They are given a second change if they submit an incorrect answer. 
+- On submission of a second incorrect answer, the 'explode' function is triggered which ends the game.
+
+
+- The game is replayable. At the end of the game, the user is asked whether they'd like to play again. The questions are then reshuffled so they receive 10 different questions. 
+
+[Replayable screenshot](documentation/replayable_screenshot.png)
 
 
 ## **Tools and Technologies** ##
@@ -50,9 +58,16 @@ I've used the following Python packages and/or external imported packages:
 
 I have used the recommended [CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
 
+[Run.py validation link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/brindle5/escape-pod/main/run.py)  
 
+Result: pass with no errors
 
-### Lighthouse Audit ###
+![Run.py validator screenshot](documentation/run.py_validator_screenshot.png)
+
+[Questions.py validator link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/brindle5/escape-pod/main/questions.py)
+
+PUT SCREENSHOT HERE WHEN CODE HAS BEEN PUSHED
+
 
 ### Defensive Programming ###
 
@@ -61,6 +76,8 @@ When the user is prompted to enter their name, the ‘isalpha ‘command is used
 ![Name input screenshot](documentation/name_input.png)
 
 ### Bugs ###
+
+There are no bugs that I'm aware of.
 
 ## **Deployment** ##
 
