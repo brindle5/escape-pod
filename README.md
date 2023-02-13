@@ -8,14 +8,21 @@ There are a number of features within the escape pod game:
 
 - The dictionary of 30 questions and answers are shuffled and the first 10 of those are presented to the player. 
 - The player is kept in a loop while they answer their 10 questions.
-- The player's answer is checked within the 'validate answer' function. They are given a second change if they submit an incorrect answer. 
+- The player's answer is checked within the 'validate answer' function. They are given a second chance if they submit an incorrect answer. 
+
+![Validate answer screenshot](documentation/validate_answer_screenshot.png)
+
 - On submission of a second incorrect answer, the 'explode' function is triggered which ends the game.
 
+![Explode screenshot](documentation/explode_screenshot.png)
 
-- The game is replayable. At the end of the game, the user is asked whether they'd like to play again. The questions are then reshuffled so they receive 10 different questions. 
+- The game is replayable. At the end of the game, the user is asked whether they'd like to play again. This reduces the chance of the player being asked the same question.
 
-[Replayable screenshot](documentation/replayable_screenshot.png)
+![Replayable screenshot](documentation/replayable_screenshot.png)
 
+### Future Features ###
+
+The game could be easily expanded by adding further questions to the question and answer dictionary. 
 
 ## **Tools and Technologies** ##
 
@@ -49,7 +56,7 @@ The primary functions used on this application are:
 I've used the following Python packages and/or external imported packages:
 - `time`: used for adding time delays.
 - `random`: used to get a random choice from a list.
-- `os`:
+- `os`: sets environment variables
 - `QUESTIONS`: imports the questions and answers from their separate file. 
 
 ## **Testing** ##
@@ -66,7 +73,9 @@ Result: pass with no errors
 
 [Questions.py validator link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/brindle5/escape-pod/main/questions.py)
 
-PUT SCREENSHOT HERE WHEN CODE HAS BEEN PUSHED
+Result: pass with no errors
+
+![Questions.py validator screenshot](documentation/questions.py_validator_screenshot.png)
 
 
 ### Defensive Programming ###

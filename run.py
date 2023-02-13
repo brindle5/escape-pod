@@ -55,7 +55,9 @@ def validate_answer(question, my_answer, correct_answer, attempt):
             print(f'You have {attempt} chance remaining.')
             my_answer = input(question)
             validate_answer(question, my_answer, correct_answer, attempt)
+            return True
         else:
+            game_active = False
             print('Detonation sequence triggered...')
             explode()
 
@@ -106,11 +108,16 @@ def main():
             print('You may now access the escape pod.')
             game_active = False
 
-    play_again = input("Would you like to play again? [yes/no]\n").lower()
-    if play_again == "no":
-        print("\nThanks for playing")
-    elif play_again == "yes":
-        main()
-
+    while True:
+        play_again = input("Would you like to play again? [yes/no]\n").lower()
+        if play_again == "no":
+            clear()
+            print("\nThanks for playing")
+            break
+        elif play_again == "yes":
+            main()
+        else:
+            clear()
+            print("Please select either 'yes' or 'no'.")
 
 main()
