@@ -13,11 +13,7 @@ def clear():
 
 print('Welcome to the USS Odyssey')
 print()
-print('To gain access to the escape pod, you must unlock it by answering ten questions.')  # noqa
-print()
-print('The ship will explode if you enter two incorrect answers.')
-print()
-print('Good luck')
+print('To gain access to the escape pod, you must unlock it.')
 print()
 
 playing = input('Press enter to continue. \n')
@@ -31,31 +27,40 @@ while True:
     else:
         break
 
+print(f'Hi {player} and welcome to the escape pod!')
+print()
+print('To access the escape pod, you must answer ten questions.')
+print()
+print('The ship will explode if you enter two incorrect answers.')
+print()
+print('Good luck')
+print()
 
-attempt = 2
 
-
-def validate_answer(question, my_answer, correct_answer, attempt):
+def validate_answer(question, correct_answer):
     """
     Compare the player's answer with the correct answer from the dictionary
     Provide feedback from the terminal
     """
-    clear()
-    if my_answer == correct_answer:
-        print('Correct')
+    attempt = 2
+    while attempt > 0:
+        user_answer = input(question)
+        if user_answer.lower() == correct_answer.lower():
+            clear()
+            print('Correct\n')
+            break
+        else:
+            clear()
+            attempt -= 1
+            print('That is not correct.')
+            print(f'You have {attempt} chance remaining.\n')
+
+    if attempt > 0:
         return True
     else:
-        print('That is not correct.')
-        attempt -= 1
-        if attempt > 0:
-            print(f'You have {attempt} chance remaining.')
-            my_answer = input(question)
-            validate_answer(question, my_answer, correct_answer, attempt)
-            return True
-        else:
-            game_active = False
-            print('Detonation sequence triggered...')
-            explode()
+        game_active = False
+        print('Detonation sequence triggered...')
+        explode()
 
 
 def explode():
@@ -90,9 +95,8 @@ def main():
         for i in range(0, 10):
             question = questions[i]['question']
             correct_answer = questions[i]['answer']
-            my_answer = input(f"Question #{i+1}: {question}")
             is_correct = validate_answer(
-                question, my_answer, correct_answer, attempt)
+                f"Question #{i+1}: {question}", correct_answer)
             if is_correct:
                 continue
             else:
@@ -101,7 +105,7 @@ def main():
         else:
             clear()
             print('You have proven your humanity.')
-            print('You may now access the escape pod.')
+            print('You may now access the escape pod.\n')
             game_active = False
 
     while True:
