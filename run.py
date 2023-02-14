@@ -13,7 +13,11 @@ def clear():
 
 print('Welcome to the USS Odyssey')
 print()
-print('To gain access to the escape pod, you must unlock it.')
+print('To gain access to the escape pod, you must unlock it by answering ten questions.')
+print()
+print('The ship will explode if you enter two incorrect answers.')
+print()
+print('Good luck')
 print()
 
 playing = input('Press enter to continue. \n')
@@ -27,14 +31,6 @@ while True:
     else:
         break
 
-print(f'Hi {player} and welcome to the escape pod!')
-print()
-print('To access the escape pod, you must answer ten questions.')
-print()
-print('The ship will explode if you enter two incorrect answers.')
-print()
-print('Good luck')
-print()
 
 attempt = 2
 
@@ -119,5 +115,6 @@ def main():
         else:
             clear()
             print("Please select either 'yes' or 'no'.")
+
 
 main()

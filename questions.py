@@ -72,7 +72,7 @@ QUESTIONS = [
         "answer": "4"
     },
     {
-        "question": "How many lives is a cast said to have? \n",
+        "question": "How many lives is a cat said to have? \n",
         "answer": "9"
     },
     {
