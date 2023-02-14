@@ -13,7 +13,7 @@ def clear():
 
 print('Welcome to the USS Odyssey')
 print()
-print('To gain access to the escape pod, you must unlock it by answering ten questions.')
+print('To gain access to the escape pod, you must unlock it by answering ten questions.')  # noqa
 print()
 print('The ship will explode if you enter two incorrect answers.')
 print()
