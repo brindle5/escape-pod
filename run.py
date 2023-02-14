@@ -13,8 +13,13 @@ def clear():
 
 print('Welcome to the USS Odyssey')
 print()
-print('To gain access to the escape pod, you must unlock it.')
+print('To gain access to the escape pod, you must unlock it by answering ten questions.')  # noqa
 print()
+print('The ship will explode if you enter two incorrect answers.')
+print()
+print('Good luck')
+print()
+
 
 playing = input('Press enter to continue. \n')
 
@@ -26,15 +31,6 @@ while True:
         print('Only letters are accepted')
     else:
         break
-
-print(f'Hi {player} and welcome to the escape pod!')
-print()
-print('To access the escape pod, you must answer ten questions.')
-print()
-print('The ship will explode if you enter two incorrect answers.')
-print()
-print('Good luck')
-print()
 
 
 def validate_answer(question, correct_answer):
@@ -104,6 +100,7 @@ def main():
                 break
         else:
             clear()
+            print(f'Congratulations {player}.\n')
             print('You have proven your humanity.')
             print('You may now access the escape pod.\n')
             game_active = False

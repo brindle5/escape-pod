@@ -16,13 +16,13 @@ There are a number of features within the escape pod game:
 
 ![Explode screenshot](documentation/explode_screenshot.png)
 
-- The game is replayable. At the end of the game, the user is asked whether they'd like to play again. This reduces the chance of the player being asked the same question.
+- The game is replayable. At the end of the game, the user is asked whether they'd like to play again. 
 
 ![Replayable screenshot](documentation/replayable_screenshot.png)
 
 ### Future Features ###
 
-The game could be easily expanded by adding further questions to the question and answer dictionary. 
+The game could be easily expanded by adding further questions to the question and answer dictionary. With only 30 questions, there is a chance of the player being asked the same question on different rounds of the game. With more questions, there is less chance of such a thing happening.
 
 ## **Tools and Technologies** ##
 
@@ -63,7 +63,7 @@ I've used the following Python packages and/or external imported packages:
 
 ### Code Validation ###
 
-I have used the recommended [CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
+I have used the recommended [CI Python Linter](https://pep8ci.herokuapp.com) to validate my Python files.
 
 [Run.py validation link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/brindle5/escape-pod/main/run.py)  
 
@@ -84,9 +84,23 @@ When the user is prompted to enter their name, the ‘isalpha ‘command is used
 
 ![Name input screenshot](documentation/name_input.png)
 
+At the game’s conclusion, the player is asked if they wish to play again. The player is kept in a while loop until they answer the question with either a yes or no.
+
+![Yes/no play again screenshot](documentation/yes_no_input.png)
+![Yes/no play again prompt](documentation/yes_no_input_result.png)
+
 ### Bugs ###
 
-There are no bugs that I'm aware of.
+#### Fixed Bugs ####
+
+- Python `E501 line too long` (multiple lines)
+    - To fix this, I placed # noqa at the end of each line which was affected.  This occurred mostly within my questions.py file.
+- However, to fix this bug on L94, I placed the code over two lines within parenthesises. 
+
+
+#### Unfixed bugs ####
+
+There are no other bugs that I'm aware of.
 
 ## **Deployment** ##
 
@@ -145,3 +159,7 @@ You can fork this repository by using the following steps:
 * Code Institute for the deployment terminal in Heroku.
 
 * [Markdown Builder by Tim Nelson](https://traveltimn.github.io/readme-builder)  README and TESTING tool to help generate the Markdown files
+
+### Acknowledgements
+- I would like to thank my Code Institute mentor Tim Nelson, the Code Institute tutor team and my fellow students on slack.
+
