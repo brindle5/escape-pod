@@ -107,6 +107,7 @@ There are no other bugs that I'm aware of.
 Code Institute has provided a [template](https://github.com/Code-Institute-Org/python-essentials-template) to display the terminal view of this backend application in a modern web browser.
 This is to improve the accessibility of the project to others.
 The live deployed application can be found deployed on [Heroku](https://escape-pod.herokuapp.com).
+
 ### Heroku Deployment
 This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 Deployment steps are as follows, after account setup:
@@ -125,12 +126,13 @@ Or:
 - After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type:
 	- `git push heroku main`
 The frontend terminal should now be connected and deployed to Heroku!
+
 ### Local Deployment
+
 This project can be cloned or forked in order to make a local copy on your own system.
-For either method, you will need to install any applicable packages found within the *requirements.txt* file.
-- `pip3 install -r requirements.txt`.
-If using any confidential credentials, such as `CREDS.json` or `env.py` data, these will need to be manually added to your own newly created project as well.
+
 #### Cloning
+
 You can clone the repository by following these steps:
 1. Go to the [GitHub repository](https://github.com/brindle5/escape-pod) 
 2. Locate the Code button above the list of files and click it 
@@ -150,7 +152,6 @@ You can fork this repository by using the following steps:
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/brindle5/escape-pod)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
-
 
 ## **Credits** ##
 
